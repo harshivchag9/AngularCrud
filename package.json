@@ -1,15 +1,14 @@
 {
-  "name": "AngularCrud",
+  "name": "angular-crud",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "start": "node server.js",
     "build": "ng build",
-    "heroku-postbuild": "ng build --prod",
-    "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "e2e": "ng e2e",
-    "server": "json-server --watch db.json --port 3000"
+    "lint": "ng lint",
+    "heroku-postbuild": "ng build --prod",
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {
