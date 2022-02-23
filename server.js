@@ -11,18 +11,20 @@
 
 
 const express = require('express');
-const app = express();
+
 const path = require('path');
 
+const app = express();
+
 app.use(express.static(__dirname + '/dist/AngularCrud'));
-app.listen(process.env.PORT || 8080);
+
 
 //PATH LOCATION STARTEGY
 
 app.get('/*', function (req, res) {
-const fullPath = path.join(__dirname + '/dist/AngularCrud/src/index.html');
-console.log(" Fetching from.." + fullPath);
+const fullPath = path.join(__dirname + '/dist/AngularCrud/index.html');
 res.sendFile(fullPath);
 })
 
-console.log('Server started running..');
+
+app.listen(process.env.PORT || 8080);
