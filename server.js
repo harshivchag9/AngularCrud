@@ -16,15 +16,14 @@ const path = require('path');
 
 const app = express();
 
-app.use(express.static(__dirname + '/dist/AngularCrud'));
+app.use(express.static('./dist/ANGULARCRUD'));
 
 
 //PATH LOCATION STARTEGY
 
-app.get('/*', function (req, res) {
-const fullPath = path.join(__dirname + '/dist/AngularCrud/index.html');
-res.sendFile(fullPath);
-})
+app.get('/*', (req, res) =>
+res.sendFile('index.html', {root: 'dist/ANGULARCRUD'}),
+);
 
 
 app.listen(process.env.PORT || 8080);
